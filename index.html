@@ -1,28 +1,139 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi Sitio Web de Prueba</title>
+    <title>Noticias Isletillas</title>
     <link rel="stylesheet" href="styles.css">
+
 </head>
+
 <body>
-    <header>
-        <h1>Bienvenido a Mi Sitio Web</h1>
-    </header>
+    <div class="cabecera">
+        <h1>Noticias Radio  Prueba</h1>
 
-    <main>
-        <section>
-            <h2>Prueba de Interacción</h2>
-            <button id="miBoton">Haz clic aquí</button>
-            <p id="mensaje"></p>
-        </section>
-    </main>
+        <nav class="main-nav">
+            <div class="nav-container">
+                <ul class="nav-links">
+                    <li><a href="#" class="nav-link">Inicio</a></li>
+                    <li><a href="#" class="nav-link">Categorías</a></li>
+                    <li><a href="#" class="nav-link">Contacto</a></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
 
-    <footer>
-        <p>&copy; 2023 Mi Sitio Web</p>
-    </footer>
+    <!-- Galería principal -->
 
-    <script src="script.js"></script>
+    <div class="gallery">
+
+        <!-- Elemento 1 -->
+        <div class="gallery-item" onclick="showDetail('item1')">
+            <img src="img/campo.jpg" alt="Imagen">
+            <div class="description">
+                <h3>Título del elemento 1</h3>
+                <p>Breve descripción del elemento 1</p>
+            </div>
+        </div>
+        
+        <!-- Elemento 2 -->
+        <div class="gallery-item" onclick="showDetail('item2')">
+            <img src="img/campo.jpg" alt="Imagen">
+            <div class="gallery-description">
+                <h3>Título del elemento 2</h3>
+                <p>Breve descripción del elemento 2</p>
+            </div>
+        </div>
+        
+        <!-- Elemento 3 -->
+        <div class="gallery-item" onclick="showDetail('item3')">
+            <img src="img/campo.jpg" alt="Imagen 3">
+            <div class="gallery-description">
+                <h3>Título del elemento 3</h3>
+                <p>Breve descripción del elemento 3</p>
+            </div>
+        </div>
+        
+        <!-- Elemento 4 -->
+        <div class="gallery-item" onclick="showDetail('item4')">
+            <img src="img/campo.jpg" alt="Imagen">
+            <div class="gallery-description">
+                <h3>Título del elemento 4</h3>
+                <p>Breve descripción del elemento 4</p>
+            </div>
+        </div>
+        
+        <!-- Puedes añadir más elementos aquí -->
+    </div>
+    
+    <!-- Páginas de detalle -->
+    <div id="item1" class="detail-page">
+        
+        <div class="detail-header">
+            <h2>Título del elemento 1</h2>
+            <button class="back-button" onclick="hideDetail('item1')">Volver</button>
+        </div>
+
+        <div class="detail-content">
+            
+            <img src="img/campo.jpg" alt="Imagen principal 1" class="detail-main-image">
+            <div class="detail-description">
+                <h3>Información completa</h3>
+                <p>Esta es la información completa sobre el elemento 1. Aquí puedes agregar toda la descripción extendida que necesites. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vitae risus auctor, commodo nisi non, consectetur dui. Praesent ullamcorper magna at tellus tempor, in ultrices ex convallis.</p>
+            </div>
+            
+            <h3>Más imágenes</h3>
+            <div class="detail-gallery">
+                <img src="img/campoConSilos.jpg" alt="Imagen adicional">
+                <img src="img/campoConSilos.jpg" alt="Imagen adicional">
+                <img src="img/campoConSilos.jpg" alt="Imagen adicional">
+                <img src="img/campoConSilos.jpg" alt="Imagen adicional">
+                <img src="img/campoConSilos.jpg" alt="Imagen adicional">
+            </div>
+        
+        </div>
+    
+    </div>
+    
+    <div id="item2" class="detail-page">
+        
+        <div class="detail-header">
+            <h2>Título del elemento 2</h2>
+        
+            <button class="back-button" onclick="hideDetail('item2')">Volver</button>
+        </div>
+        
+        <div class="detail-content">
+        
+            <img src="https://via.placeholder.com/800x400" alt="Imagen principal 2" class="detail-main-image">
+            <div class="detail-description">
+                <h3>Información completa</h3>
+                <p>Esta es la información completa sobre el elemento 2. Aquí puedes agregar toda la descripción extendida que necesites. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vitae risus auctor, commodo nisi non, consectetur dui. Praesent ullamcorper magna at tellus tempor, in ultrices ex convallis.</p>
+            </div>
+        
+            <h3>Más imágenes</h3>
+        
+            <div class="detail-gallery">
+                <img src="https://via.placeholder.com/150" alt="Imagen adicional 1">
+                <img src="https://via.placeholder.com/150" alt="Imagen adicional 2">
+                <img src="https://via.placeholder.com/150" alt="Imagen adicional 3">
+            </div>
+        </div>
+    </div>
+    
+    <!-- Puedes añadir páginas de detalle para elementos 3 y 4 aquí -->
+    
+    <script>
+        function showDetail(itemId) {
+            document.getElementById(itemId).classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+        
+        function hideDetail(itemId) {
+            document.getElementById(itemId).classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+    </script>
 </body>
 </html>
